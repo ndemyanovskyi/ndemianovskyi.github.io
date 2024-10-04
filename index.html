@@ -6,6 +6,20 @@
     <title>Test</title>
 </head>
 <body>
+
+<script>
+    let formData = new FormData();
+    formData.append('trackNumber', 'TQ-00021017');
+    formData.append('action', 'meestTracking');
+    formData.append('nonce', 'b1c90ae66f');
+
+    fetch('https://meestcn.cn/wp-admin/admin-ajax.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(it => it.json())
+    .then(it => console.log(it))
+</script>
 <div>Texts</div>
 </body>
 </html>
